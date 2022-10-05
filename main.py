@@ -7,7 +7,7 @@ def main():
     into a single collection. Output 4 csv files containing filtered and sorted data.
     '''
     
-    client = pymongo.MongoClient("mongodb://AlRahrooh:4qGzY3rJG9JpIg63@bigdatatest-shard-00-00.mv5js.mongodb.net:27017,bigdatatest-shard-00-01.mv5js.mongodb.net:27017,bigdatatest-shard-00-02.mv5js.mongodb.net:27017/?ssl=true&replicaSet=atlas-nbvcs0-shard-0&authSource=admin&retryWrites=true&w=majority")
+    client = pymongo.MongoClient("mongodb://YIsaac:4qGzY3rJG9JpIg63@bigdatatest-shard-00-00.mv5js.mongodb.net:27017,bigdatatest-shard-00-01.mv5js.mongodb.net:27017,bigdatatest-shard-00-02.mv5js.mongodb.net:27017/?ssl=true&replicaSet=atlas-nbvcs0-shard-0&authSource=admin&retryWrites=true&w=majority")
     
     users_to_mongo()
     new_users_to_mongo()
@@ -22,7 +22,7 @@ def users_to_mongo():
     upload users.csv to mongoDB users collection
     '''
     
-    client = pymongo.MongoClient("mongodb://AlRahrooh:4qGzY3rJG9JpIg63@bigdatatest-shard-00-00.mv5js.mongodb.net:27017,bigdatatest-shard-00-01.mv5js.mongodb.net:27017,bigdatatest-shard-00-02.mv5js.mongodb.net:27017/?ssl=true&replicaSet=atlas-nbvcs0-shard-0&authSource=admin&retryWrites=true&w=majority")
+    client = pymongo.MongoClient("mongodb://YIsaac:4qGzY3rJG9JpIg63@bigdatatest-shard-00-00.mv5js.mongodb.net:27017,bigdatatest-shard-00-01.mv5js.mongodb.net:27017,bigdatatest-shard-00-02.mv5js.mongodb.net:27017/?ssl=true&replicaSet=atlas-nbvcs0-shard-0&authSource=admin&retryWrites=true&w=majority")
     mg_db = client.AlRahrooh
     mg_users = mg_db.users
     users_df = pd.read_csv("users.csv")
@@ -35,7 +35,7 @@ def new_users_to_mongo():
     upload new_users.csv to mongoDB users collection
     '''
     
-    client = pymongo.MongoClient("mongodb://AlRahrooh:4qGzY3rJG9JpIg63@bigdatatest-shard-00-00.mv5js.mongodb.net:27017,bigdatatest-shard-00-01.mv5js.mongodb.net:27017,bigdatatest-shard-00-02.mv5js.mongodb.net:27017/?ssl=true&replicaSet=atlas-nbvcs0-shard-0&authSource=admin&retryWrites=true&w=majority")
+    client = pymongo.MongoClient("mongodb://YIsaac:4qGzY3rJG9JpIg63@bigdatatest-shard-00-00.mv5js.mongodb.net:27017,bigdatatest-shard-00-01.mv5js.mongodb.net:27017,bigdatatest-shard-00-02.mv5js.mongodb.net:27017/?ssl=true&replicaSet=atlas-nbvcs0-shard-0&authSource=admin&retryWrites=true&w=majority")
     mg_db = client.AlRahrooh
     mg_users = mg_db.users
     new_users_df = pd.read_csv("new_user.csv")
@@ -48,7 +48,7 @@ def collect_data():
     establishes connection to mongoDB client and downloads users collection as a local dataframe
     '''
 
-    client = pymongo.MongoClient("mongodb://AlRahrooh:4qGzY3rJG9JpIg63@bigdatatest-shard-00-00.mv5js.mongodb.net:27017,bigdatatest-shard-00-01.mv5js.mongodb.net:27017,bigdatatest-shard-00-02.mv5js.mongodb.net:27017/?ssl=true&replicaSet=atlas-nbvcs0-shard-0&authSource=admin&retryWrites=true&w=majority")
+    client = pymongo.MongoClient("mongodb://YIsaac:4qGzY3rJG9JpIg63@bigdatatest-shard-00-00.mv5js.mongodb.net:27017,bigdatatest-shard-00-01.mv5js.mongodb.net:27017,bigdatatest-shard-00-02.mv5js.mongodb.net:27017/?ssl=true&replicaSet=atlas-nbvcs0-shard-0&authSource=admin&retryWrites=true&w=majority")
     mg_db = client.AlRahrooh
     mg_users = mg_db.users
     all_records = mg_users.find()
